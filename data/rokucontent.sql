@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 10, 2020 at 10:39 PM
+-- Generation Time: Dec 15, 2020 at 10:44 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -51,6 +51,31 @@ INSERT INTO `kidcontent` (`id`, `mediatype`, `kdthumbnail`, `kdName`, `kdDesc`) 
 (7, 'Video', 'bats.jpg', 'Batman the Animated Series', 'the description will go here'),
 (8, 'Video', 'jack.jpg', 'Samurai Jack', 'the description will go here'),
 (9, 'Video', 'scoob.jpg', 'Scooby Doo', 'the description will go here');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kidsocial`
+--
+
+DROP TABLE IF EXISTS `kidsocial`;
+CREATE TABLE IF NOT EXISTS `kidsocial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kidsocialImage` varchar(30) NOT NULL,
+  `kidsocialAlt` varchar(30) NOT NULL,
+  `kidsocialurl` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kidsocial`
+--
+
+INSERT INTO `kidsocial` (`id`, `kidsocialImage`, `kidsocialAlt`, `kidsocialurl`) VALUES
+(1, 'facebookkids.png', 'facebook logo', 'https://www.facebook.com/'),
+(2, 'instakids.png', 'instagram logo', 'https://www.instagram.com/'),
+(3, 'twitterkids.png', 'twitter logo', 'https://twitter.com/'),
+(4, 'ytubekids.png', 'youTube logo', 'https://www.youtube.com/?gl=US');
 
 -- --------------------------------------------------------
 
@@ -108,6 +133,31 @@ INSERT INTO `regularcontent` (`id`, `mediatype`, `rgthumbnail`, `rgName`, `rgDes
 (10, 'Video', '12.jpg', '12 Angry Men', 'insert description here'),
 (11, 'Audio', 'miles.jpg', 'Kind of Blue', 'insert description here'),
 (12, 'Video', 'beave.jpg', 'Leave it to Beaver', 'insert description here');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social`
+--
+
+DROP TABLE IF EXISTS `social`;
+CREATE TABLE IF NOT EXISTS `social` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `socialImage` varchar(30) NOT NULL,
+  `socialAlt` varchar(30) NOT NULL,
+  `socialurl` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `social`
+--
+
+INSERT INTO `social` (`id`, `socialImage`, `socialAlt`, `socialurl`) VALUES
+(1, 'facebook.png', 'facebook icon', 'https://www.facebook.com/'),
+(2, 'insta.png', 'instagram icon', 'https://www.instagram.com/'),
+(3, 'twitter.png', 'twitter logo', 'https://twitter.com/'),
+(4, 'ytube.png', 'YouTube logo', 'https://www.youtube.com/?gl=US');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
