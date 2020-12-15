@@ -30,10 +30,10 @@
             </ul>
         </nav>
         </header>
+        
+            <buttoncomponent v-for="item in content" :item="item" :key="item.id" @setmediatype="setComponent"></buttoncomponent>
 
-        <div v-for="item, index in content">
-            <img :src='"images/" + item.rgthumbnail' :alt='item.rgName' id="contentImage">
-        </div>
+        <lightbox :item="currentItem" :mediaType="mediaType"></lightbox>
 
     <footer>
         <img src="images/rokufooter.png" alt="footer roku logo" id="botLogo">
