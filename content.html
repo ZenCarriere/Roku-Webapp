@@ -31,16 +31,15 @@
         </nav>
         </header>
 
-        <div id="movies"></div>
-        <div id="music"></div>
-        <div id="tv"></div>
-        <div id="50s"></div>
+        <div v-for="item, index in content">
+            <img :src='"images/" + item.rgthumbnail' :alt='item.rgName' id="landingPageImage">
+        </div>
 
     <footer>
         <img src="images/rokufooter.png" alt="footer roku logo" id="botLogo">
 
-        <div id="socialmedia">
-            <h2 class="hidden"></h2>
+        <div v-for="item, index in social">
+            <a :href='item.socialurl'><img :src='"images/" + item.socialImage' :alt='item.socialAlt' id="socialicon"></a>
         </div>
 
         <p>@2020 Roku Inc. All rights Reserved</p>
