@@ -1,8 +1,13 @@
 import { fetchData } from "./components/DataMiner.js";
+import ButtonComponent from "./components/TheButtonComponent.js";
+import KidButtonComponent from "./components/TheKidButtonComponent.js";
+import LightboxComponent from "./components/TheLightboxComponent.js";
 
 const myVM =(() => {
     let vue_vm = new Vue({
         data:{
+        currentItem: {},
+        mediaType:"",
         landing: [],
         social: [],
         content: [],
@@ -11,7 +16,6 @@ const myVM =(() => {
         },
 
         mounted: function(){
-            debugger;
             console.log("Vue is ready to go");
 
             fetchData("./includes/landing.php")
@@ -55,19 +59,17 @@ const myVM =(() => {
         },
 
         methods: {
-            showContentData(data){
-                console.log("clicked on content");
-                let lightbox = document.querySelector(".lightbox"),
-                CloseButton = lightbox.querySelector('span');
-
-                CloseButton.addEventListener("click", ()=> { lightbox.classList.remove('show-lightbox')});
-
-                lightbox.classList.add('show-lightbox');
-
-                lightbox.querySelector('img').src=`images/${data.port_image}`;
-                lightbox.querySelector('h3').textContent = data.port_title;
-
+            setComponent(item){
+                this.mediaType = item.mediatype;
+                this.currentItem = item;
+                document.querySelector('.lightbox').classList.add('show-lightbox');
             }
+        },
+
+        components: {
+            "buttoncomponent" : ButtonComponent,
+            "kidbuttoncomponent" : KidButtonComponent,
+            "lightbox" : LightboxComponent
         }
 
     }).$mount("#page");
