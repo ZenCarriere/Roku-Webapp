@@ -1,7 +1,7 @@
     <?php 
     $db_dsn = array( 
-        'host' => 'mysql.zeninnovation.ca',
-        'dbname' => 'zenportfolio',
+        'host' => 'localhost',
+        'dbname' => 'rokucontent',
         'charset' => 'utf8'
     );
 
@@ -9,8 +9,8 @@
 
     //This is the DB credentials
 
-    $db_user = 'zeninnovationca1';
-    $db_pass = 'RtgVztXh';
+    $db_user = 'root';
+    $db_pass = '';
 
     try{
         $pdo = new PDO($dsn, $db_user, $db_pass);

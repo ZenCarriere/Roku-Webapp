@@ -30,17 +30,17 @@
         </nav>
         </header>
 
-        <div id="heroImages">
-            <h2 class="hidden"></h2>
+        <div v-for="item, index in landing">
+            <img :src='"images/" + item.landingImage' :alt='item.landingAlt' id="landingPageImage">
         </div>
 
         <section id="watchsection">
             <h2 class="hidden"></h2>
             <div id="buttons">
                 <h3 class="hidden"></h3>
-                <button type="button">Movie Gallery</button>
-                <button type="button">Music Gallery</button>
-                <button type="button">TV Gallery</button>
+                <a href="signin.html"><button type="button">Movie Gallery</button></a>
+                <a href="signin.html"><button type="button">Music Gallery</button></a>
+                <a href="signin.html"><button type="button">TV Gallery</button></a>
             </div>
 
             <p>Start Watching Today!</p>
@@ -56,8 +56,8 @@
     <footer>
         <img src="images/rokufooter.png" alt="footer roku logo" id="botLogo">
 
-        <div id="socialmedia">
-            <h2 class="hidden"></h2>
+        <div v-for="item, index in social">
+            <a :href='item.socialurl'><img :src='"images/" + item.socialImage' :alt='item.socialAlt' id="socialicon"></a>
         </div>
 
         <p>@2020 Roku Inc. All rights Reserved</p>

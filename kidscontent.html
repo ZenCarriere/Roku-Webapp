@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <main id="page">
+    <main id="page"> 
         <h1 class="hidden"></h1>
 
         <header>
@@ -34,11 +34,15 @@
         <div id="music"><img src="images/musicicon.png" alt="icon of a music note" id="musicicon"></div>
         <div id="tv"><img src="images/tvicon.png" alt="icon of a tv" id="tvicon"></div>
 
+        <div v-for="item, index in kidcontent">
+            <img :src='"images/" + item.kdthumbnail' :alt='item.kdName' id="landingPageImage">
+        </div>
+
     <footer id="kidsfooter">
         <img src="images/rokukidsfoot.png" alt="footer roku kids logo" id="botLogo">
 
-        <div id="socialmedia">
-            <h2 class="hidden"></h2>
+        <div v-for="item, index in kidsocial">
+            <a :href='item.kidsocialurl'><img :src='"images/" + item.kidsocialImage' :alt='item.kidsocialAlt' id="socialicon"></a>
         </div>
 
         <p>@2020 Roku Inc. All rights Reserved</p>
